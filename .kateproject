@@ -1,4 +1,0 @@
-{
-  "name": "build-docker-compose"
-, "files": [ { "git": 1 } ]
-}

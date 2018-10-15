@@ -1,0 +1,23 @@
+gitea:
+    image: gitea/gitea:latest
+    container_name: gitea
+    restart: unless-stopped
+    environment:
+      - VIRTUAL_HOST=${GITEA_HOSTNAME}.${LE_DOMAINNAME}
+      - LETSENCRYPT_HOST=${GITEA_HOSTNAME}.${LE_DOMAINNAME}
+      - LETSENCRYPT_EMAIL=${LE_EMAIL}
+      - VIRTUAL_PORT=3000
+      - ROOT_URL=https://${GITEA_HOSTNAME}.${LE_DOMAINNAME}
+      - DOMAIN=${GITEA_HOSTNAME}.${LE_DOMAINNAME}
+      - PROTOCOL=http
+      - USER_UID=1000
+      - USER_GID=1000
+    volumes:
+      - ./gitea:/data
+    ports:
+      - "5000:3000"
+      - "222:22"
+    networks:
+      - proxy-tier
+      - default
+

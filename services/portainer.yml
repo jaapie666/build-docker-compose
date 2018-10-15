@@ -3,9 +3,9 @@
     container_name: portainer
     restart: always
     environment:
-      - VIRTUAL_HOST=docker2.jaapie.io
-      - LETSENCRYPT_HOST=docker2.jaapie.io
-      - LETSENCRYPT_EMAIL=jaapie@timegoat.org
+      - VIRTUAL_HOST=${PORTAINER_HOSTNAME}.${LE_DOMAINNAME}
+      - LETSENCRYPT_HOST=${PORTAINER_HOSTNAME}.${LE_DOMAINNAME}
+      - LETSENCRYPT_EMAIL=${LE_EMAIL}
     volumes:
       - ./portainer/:/data
       - /var/run/docker.sock:/var/run/docker.sock

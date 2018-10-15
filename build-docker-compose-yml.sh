@@ -6,7 +6,7 @@
 
 buildservices()
 {
-    echo -e "services:\n\n$(cat ./services/{proxy.yml,portainer.yml,gitea.yml})"
+    echo -e "services:\n\n$(cat ./services/{proxy.yml,portainer.yml})"
 }
 
 buildvolumes()
@@ -20,4 +20,5 @@ buildnetworks()
 }
 
 
-echo -e "version: '2'\n\n$(buildservices)\n\n$(buildvolumes)\n\n$(buildnetworks)" > docker-compose.yml
+echo -e "#  Copied from https://blog.ssdnodes.com/blog/self-hosting-handbook-a-docker-compose-tutorial/
+#  Slightly modified to allow for automatic configuration with environment variables\n\nversion: '2'\n\n$(buildservices)\n\n$(buildvolumes)\n\n$(buildnetworks)" > docker-compose.yml

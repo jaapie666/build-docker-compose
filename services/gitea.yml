@@ -1,4 +1,4 @@
-gitea:
+  gitea:
     image: gitea/gitea:latest
     container_name: gitea
     restart: unless-stopped

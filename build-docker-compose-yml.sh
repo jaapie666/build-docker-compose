@@ -27,5 +27,5 @@ echo -e "#  Copied from https://blog.ssdnodes.com/blog/self-hosting-handbook-a-d
 if [ "$1" == '-t' ]
 then
   echo Substituting environment variables
-  vartest.sh
+  ./vartest.sh
 fi

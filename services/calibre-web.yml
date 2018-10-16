@@ -1,0 +1,21 @@
+  calibre-web:
+    image: technosoft2000/calibre-web
+    container_name: calibre-web
+    restart: unless-stopped
+    environment:
+      - VIRTUAL_HOST=${CALIBRE_WEB_HOSTNAME}.${LE_DOMAINNAME}
+      - LETSENCRYPT_HOST=${CALIBRE_WEB_HOSTNAME}.${LE_DOMAINNAME}
+      - LETSENCRYPT_EMAIL=${LE_EMAIL}
+      - USE_CONFIG_DIR=true
+      - APP_REPO=https://github.com/janeczku/calibre-web.git
+      - APP_BRANCH=master
+    volumes:
+      - ./books:/books
+      - ./app:/calibre-web/app
+      - ./kindlegen:/calibre-web/kindlgen
+      - ./config:/calibre-web/config
+    ports:
+      - "8083:8083"
+    networks:
+      - "default"
+      - "proxy-tier"

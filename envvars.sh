@@ -15,3 +15,7 @@ export PORTAINER_HOSTNAME='docker'
 #  Subdomain name for gitea service
 
 export GITEA_HOSTNAME='gitea'
+
+#  Subdomain for calibre-web service
+
+export CALIBRE_WEB_HOSTNAME='calibre-web'

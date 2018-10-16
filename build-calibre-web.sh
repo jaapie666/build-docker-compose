@@ -6,17 +6,17 @@
 echo Generating docker-compose.yml
 buildservices()
 {
-    echo -e "services:\n\n$(cat ./services/{proxy.yml,portainer.yml,gitea.yml,calibre-web.yml})"
+    echo -e "services:\n\n$(cat ./services/calibre-web.yml)"
 }
 
 buildvolumes()
 {
-    echo -e "volumes:\n  certs:\n  vhost.d:\n  html:\n  books:\n  app:\n  kindlegen:\n  config:"
+    echo -e "volumes:\n  certs:\n  vhost.d:\n  html:"
 }
 
 buildnetworks()
 {
-    echo -e "networks:\n  proxy-tier:"
+    echo -e "networks:\n"
 }
 
 

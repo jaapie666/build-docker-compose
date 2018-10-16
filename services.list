@@ -1,9 +1,0 @@
-#  List of services to include when building the docker-compose.yml file
-#  the nginx reverse proxy, automatic ssl, and portainer services are always 
-#  included
-
-  INCLUDE_GITEA=true
-
-  INCLUDE_CALIBRE_WEB=true
-
-  INCLUDE_BOOKSTACK=false
